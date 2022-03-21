@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
-import feed from "../../feed.json";
+// import feed from "../../feed.json";
 // @ts-ignore
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 function Feeds() {
-  // const [feed, setFeed] = useState<any>(null)
+  const [feed, setFeed] = useState<any>(null)
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   async function fetchMyAPI() {
-  //     let response = await fetch("https://www.reddit.com/r/popular.json")
-  //     response = await response.json()
-  //     console.log(response.status)
-  //     setFeed(response)
-  //   }
+    async function fetchMyAPI() {
+      let response = await fetch("https://www.reddit.com/r/popular.json")
+      response = await response.json()
+      console.log(response.status)
+      setFeed(response)
+    }
 
-  //   fetchMyAPI()
-  // }, [])
+    fetchMyAPI()
+  }, [])
 
   const customStyle = {
     display: "grid",

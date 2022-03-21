@@ -72,7 +72,7 @@ function Post({
   
     
   return (
-    <div className="post bg-neutral-300 p-3 m-3 flex flex-col self-start max-w-full border-t-4 max-h-screen">
+    <div className="post bg-neutral-300 p-3 m-3 flex flex-col  max-w-full border-t-4">
       <div className="post-header">
         <div className="flex pb-2">
           <img

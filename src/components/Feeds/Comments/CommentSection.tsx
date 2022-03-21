@@ -20,7 +20,7 @@ function CommentSection() {
   const url = useSelector((state: any) => state.comment.post_url);
   useEffect(() => {
     async function fetchMyAPI() {
-      let response = await fetch(`https://cors-anywhere.herokuapp.com/${url}`, {headers: {'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*', 'origin': 'https://www.reddit.com'}});
+      let response = await fetch(url, {headers: {'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*', 'origin': 'https://www.reddit.com'}});
       response = await response.json();
       console.log(response.status);
       dataSet(response);
@@ -74,7 +74,17 @@ function CommentSection() {
       </div>
     </div>
   ) : (
-    <h1>Loading</h1>
+    <div className="flex w-20">
+      <h1>Loading</h1>
+      <hr />
+      <button
+        onClick={() => toggleComments()}
+        className="absolute top-0 right-0 m-2 bg-white text-blue-900 p-3 rounded"
+      >
+        <i className="bi bi-x"></i>
+        Stop
+      </button>
+    </div>
   );
 }
 
